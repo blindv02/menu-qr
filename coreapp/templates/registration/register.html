@@ -1,0 +1,35 @@
+{% extends 'loginlayout.html' %}
+
+{% block login_content %}
+    <h6 class="mb-0 pb-3"><span>Sign Up</span></h6>
+    <form class="form" method="post">
+            {% csrf_token %}
+
+        <div class="form-group mt-2">
+            <input type="text" name="username" maxlength="15" class="form-style" placeholder="Username" autocomplete="off">
+        </div>	
+        <div class="form-group mt-2">
+            <input type="text" name="name" maxlength="15" class="form-style" placeholder="Company name" autocomplete="off">
+        </div>
+        <div class="form-group mt-2">
+            <input type="email" name="email" maxlength="150" class="form-style" placeholder="Your Email">
+            <i class="input-icon uil uil-at"></i>
+        </div>	
+        <div class="form-group mt-2">
+            <input type="password" name="password1" class="form-style" placeholder="Your Password" autocomplete="new-password" required id='id_password1'>
+            <i class="input-icon uil uil-lock-alt"></i>
+        </div>
+        <div class="form-group mt-2">
+            <input type="password" name="password2" class="form-style" placeholder="Confirm Password" autocomplete="new-password" required id='id_password2'>
+            <i class="input-icon uil uil-lock-alt"></i>
+        </div>
+
+        <p>should not be too similar to your other personal information.<br>
+            must contain at least 8 characters.<br>
+            must contain special characters.<br>
+            can’t be a commonly used password.<br>
+            can’t be entirely numeric.<br></p>
+        <button class="btn mt-4" name="register" type="submit" value="registered">submit</button>
+        <p class="mb-0 mt-4 text-center">Already have account? <a href="{% url 'login' %}" class="link">Login</a></p>
+    </form>
+{% endblock login_content %}
