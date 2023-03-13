@@ -34,6 +34,3 @@ def register(request):
         
     return render(request, 'registration/register.html', data)
 
-def media(request):
-    pass
-
